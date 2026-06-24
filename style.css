@@ -1,0 +1,132 @@
+* {
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .ochilish {
+            height: 100vh;
+            width: 100%;
+            background-image:linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(Stormclouds.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            /* background-color: rgb(86, 86, 202); */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .hira {
+            max-width: 800px;
+            text-align: center;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+        }
+        .sarlavha {
+            font-size: 45px; 
+            font-weight: 700;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #38bdf8, #0ea5e9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .yozuv {
+             font-size: 16px;
+            line-height: 1.6;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .tugma {
+            margin-top: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .boshlash {
+            padding: 15px 40px;
+            font-size: 19px; 
+            font-weight: 600;
+            background: linear-gradient(45deg, #0ca1e7, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+
+        }
+
+        .boshlash:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+        }
+        .asosiy {
+            height: 100vh;
+            width: 100%;
+            background-image:linear-gradient(rgba(73, 66, 66, 0.5), rgba(69, 60, 60, 0.5)), url(asosiyrasm.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .asosiybox {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            border-radius: 20px;
+            height: 42vh;
+            width: 130vh;
+            backdrop-filter: blur(10px);
+            background: linear-gradient(rgba(112, 166, 207, 0.5), rgba(74, 116, 152, 0.5));
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+            color: rgb(203, 228, 239);
+        }
+         .vaqt, .harorat1, .sana {
+            height: 100%;
+            width: 30%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+        .fa-clock, .fa-sun, .fa-calendar {
+            font-size: 48px;
+            margin-bottom: 10px;
+        }
+        .vqa {
+            margin-bottom: 40px;
+        }
+        .btn {
+            padding: 10px 20px;
+            margin-top: 30px;
+            font-size: 16px;
+            font-weight: 600;
+            background: linear-gradient(45deg, #0ea5e9, #2563eb);
+            color: white;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+        }
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
+        }

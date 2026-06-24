@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+    <style>
+         
+    </style>
+</head>
+
+<body>
+    <div class="ochilish">
+        <div class="hira">
+            <div class="malumot">
+                <h1 class="sarlavha">Ob-havo ma'lumotlarini eng tez oling</h1>
+                <br>
+                <br>
+                <div class="yozuv">
+                    <p>Tabiat injiqliklaridan har doim bir qadam oldinda boʻling va har bir kuningizni bizning aqlli
+                        tizimimiz bilan mukammal rejalashtiring. Platformamiz global sun’iy yoʻldoshlar va mahalliy
+                        stansiyalar yordamida real vaqt rejimidagi eng aniq ma’lumotlarni taqdim etadi. Istalgan shahar
+                        va
+                        tuman ob-havosini qulay qidiruv paneli orqali bir marta bosishda bilib olishingiz mumkin. Saytda
+                        nafaqat joriy haroratni, balki havo namligi, atmosfera bosimi hamda shamol tezligini ham
+                        kuzatasiz.
+                    </p>
+                </div>
+
+                <div class="tugma">
+                    <button class="boshlash">Boshlash</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="asosiy">
+        <div class="asosiybox">
+        <div class="vaqt">
+            <i class="fa-regular fa-clock"></i>
+            <h1 class="vqa">Vaqt <br><span class="soat"></span></h1>
+        </div>
+        <div class="harorat1">
+            <i class="fa-solid fa-sun"></i>
+            <h1 class="harorat"></h1>
+            <button class="btn">ob-havo</button>
+        </div>
+        <div class="sana">
+            <i class="fa-solid fa-calendar"></i>
+            <h1>Bugun</h1>
+            <h1 class="date"></h1>
+            <h1 class="kun"></h1>
+        </div>
+        </div>
+
+    </div>
+
+    <script>
+
+        let harorat = document.querySelector(".harorat")
+        let btn = document.querySelector(".btn")
+        let tugma = document.querySelector(".boshlash")
+        document.querySelector(".asosiy").style.display = "none"
+        tugma.addEventListener("click", function () {
+            document.querySelector(".ochilish").style.display = "none"
+            document.querySelector(".asosiy").style.display = "flex"
+            selsiy()
+
+        })
+        let soat = document.querySelector(".soat")
+        setInterval(function () {
+            let vaqt = new Date()
+            let soat1 = vaqt.getHours()
+            let minut = vaqt.getMinutes()
+            let sekund = vaqt.getSeconds()
+            soat.textContent = soat1 + ":" + minut + ":" + sekund
+        }, 1000)
+        let date = document.querySelector(".date")
+        let kun = document.querySelector(".kun")
+        let vaqt = new Date()
+        let yil = vaqt.getFullYear()
+        let oy = vaqt.getMonth() + 1
+        let kun1 = vaqt.getDate()
+        date.textContent = yil + "/" + oy + "/" + kun1
+        let haftaning_kuni = vaqt.getDay()
+        if (haftaning_kuni == 0) {
+            kun.textContent = "Yakshanba"
+        } else if (haftaning_kuni == 1) {
+            kun.textContent = "Dushanba"
+        } else if (haftaning_kuni == 2) {
+            kun.textContent = "Seshanba"
+        } else if (haftaning_kuni == 3) {
+            kun.textContent = "Chorshanba"
+        } else if (haftaning_kuni == 4) {
+            kun.textContent = "Payshanba"
+        } else if (haftaning_kuni == 5) {
+            kun.textContent = "Juma"
+        } else if (haftaning_kuni == 6) {
+            kun.textContent = "Shanba"
+        }
+        function selsiy() {
+            harorat.textContent = "Yuklanmoqda...";
+            fetch("https://api.open-meteo.com/v1/forecast?latitude=41.31&longitude=69.24&current_weather=true")
+                .then(function (response) {
+                    return response.json();
+                })
+                .then(function (data) {
+                    harorat.textContent = "Harorat: " + data.current_weather.temperature + "°C";
+                })
+                .catch(function (error) {
+                    harorat.textContent = "Xatolik yuz berdi";
+                });
+        }
+        btn.addEventListener("click", selsiy)
+    </script>
+</body>
+
+</html>
