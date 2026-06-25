@@ -130,3 +130,38 @@
             transform: translateY(-3px);
             box-shadow: 0 6px 20px rgba(14, 165, 233, 0.6);
         }
+        @media (max-width: 768px) {
+            .asosiybox {
+                flex-direction: column;
+                height: auto;
+                width: 80%;
+            }
+            .vaqt, .harorat1, .sana {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+        }
+        @media (max-width: 480px) {
+            .sarlavha {
+                font-size: 36px;
+            }
+            .yozuv {
+                font-size: 14px;
+            }
+            .boshlash, .btn {
+                padding: 10px 30px;
+                font-size: 14px;
+            }
+        }
+        @media (max-width: 320px) {
+            .sarlavha {
+                font-size: 28px;
+            }
+            .yozuv {
+                font-size: 12px;
+            }
+            .boshlash, .btn {
+                padding: 8px 20px;
+                font-size: 12px;
+            }
+        }
